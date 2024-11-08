@@ -68,6 +68,8 @@ CREATE TABLE Avaliacao (
     idAnimal INT NOT NULL,
     nota DECIMAL(10, 2),
     preco DECIMAL(10, 2),
+    dataUltimaVacinacao DATE,
+    dataProximaVacina DATE,
     FOREIGN KEY (idAnimal) REFERENCES Animais(id)
 );
 
