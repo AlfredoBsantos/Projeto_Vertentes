@@ -1,0 +1,79 @@
+CREATE TABLE Acesso (
+    id SERIAL PRIMARY KEY,
+    login VARCHAR(50) NOT NULL,
+    senha VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Animais (
+    id SERIAL PRIMARY KEY,
+    idLote INT,
+    idTipo INT,
+    identificacao VARCHAR(50) NOT NULL,
+    peso DECIMAL(10, 2),
+    dataNascimento DATE,
+    raca VARCHAR(50),
+    sexo CHAR(1),
+    estadoFisiologico VARCHAR(50),
+    ganhoPesoDiario DECIMAL(10, 2),
+    estadoReprodutivo VARCHAR(50)
+);
+
+CREATE TABLE Compra (
+    id SERIAL PRIMARY KEY,
+    idAnimal INT NOT NULL,
+    fornecedor VARCHAR(50),
+    data DATE,
+    precoTomada DECIMAL(10, 2),
+    precoReal DECIMAL(10, 2),
+    origemTecnologica VARCHAR(50),
+    FOREIGN KEY (idAnimal) REFERENCES Animais(id)
+);
+
+CREATE TABLE Producao (
+    id SERIAL PRIMARY KEY,
+    idAnimal INT NOT NULL,
+    quantidadeLeite DECIMAL(10, 2),
+    data DATE,
+    qualidadeLeite VARCHAR(50),
+    FOREIGN KEY (idAnimal) REFERENCES Animais(id)
+);
+
+CREATE TABLE Estoque (
+    id SERIAL PRIMARY KEY,
+    idItem INT NOT NULL,
+    quantidade INT
+);
+
+CREATE TABLE Venda (
+    id SERIAL PRIMARY KEY,
+    idAnimal INT NOT NULL,
+    comprador VARCHAR(50),
+    data DATE,
+    preco DECIMAL(10, 2),
+    FOREIGN KEY (idAnimal) REFERENCES Animais(id)
+);
+
+CREATE TABLE Leilao (
+    id SERIAL PRIMARY KEY,
+    idAnimal INT NOT NULL,
+    arrematador VARCHAR(50),
+    data DATE,
+    precoInicial DECIMAL(10, 2),
+    precoFinal DECIMAL(10, 2),
+    FOREIGN KEY (idAnimal) REFERENCES Animais(id)
+);
+
+CREATE TABLE Avaliacao (
+    id SERIAL PRIMARY KEY,
+    idAnimal INT NOT NULL,
+    nota DECIMAL(10, 2),
+    preco DECIMAL(10, 2),
+    FOREIGN KEY (idAnimal) REFERENCES Animais(id)
+);
+
+CREATE TABLE Tombamento (
+    id SERIAL PRIMARY KEY,
+    idAnimal INT NOT NULL,
+    tipo VARCHAR(50),
+    FOREIGN KEY (idAnimal) REFERENCES Animais(id)
+);
