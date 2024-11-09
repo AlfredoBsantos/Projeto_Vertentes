@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bovinos Menager</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .bottom-menu {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            padding: 10px 0;
+        }
+        .bottom-menu .nav-link {
+            color: #000;
+            text-align: center;
+        }
+        .bottom-menu .nav-link:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <span class="navbar-toggler-icon"></span>
+    </a>
+    <button class="btn btn-outline-primary" type="button">A Solicitar</button>
+    <button class="btn btn-outline-secondary" type="button">Em Espera</button>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Material de Limpeza</h5>
+            <p class="card-text">Detergente | 1 nov 2024</p>
+            <span class="badge badge-secondary">Baixa</span>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-primary btn-lg" type="button">+</button>
+    </div>
+</div>
+
+<nav class="navbar fixed-bottom bottom-menu">
+    <div class="container">
+        <div class="row w-100">
+            <div class="col text-center">
+                <a class="nav-link" href="#">
+                    <img src="https://via.placeholder.com/30" alt="Aquisições">
+                    <br>Aquisições
+                </a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link" href="#">
+                    <img src="https://via.placeholder.com/30" alt="Estoque">
+                    <br>Estoque
+                </a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link" href="#">
+                    <img src="https://via.placeholder.com/30" alt="Bovinos">
+                    <br>Bovinos
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
